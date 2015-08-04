@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js" ng-app="charteApp" ng-controller="MainCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <!-- build:css styles/guidestyles.css -->
+    <link rel="stylesheet" href="styles/guidestyles.css">
+    <!-- endbuild -->
+
+    <!-- build:css(.) styles/animation.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    
+    <!-- build:css styles/crbicon.css -->
+    <link rel="stylesheet" href="styles/crbicon.css">
+    <!-- endbuild -->
+    
+    <link rel="stylesheet" ng-href="thematiques/{{thematique.id}}.css" >
+  </head>
+  <body class="{{thematique.id}}" data-spy="scroll" data-target=".navigation" id="top">
+    
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-md-6 col-md-offset-2">
+          
+          <div class="page-header {{thematique.id}}" >
+              <h1>Le guide de style de la Région Bretagne</h1>
+          </div>
+         
+          <p class="lead">Ce guide a pour objectif de renforcer l'identité des productions en ligne du Conseil régional de Bretagne, tout en les rendant plus homogènes techniquement &amp; graphiquement.</p>
+          <p>Ce « <em>guidelines</em> » des styles graphiques devra être respecté pour l'ensemble des supports de communication numérique,  quel qu'en soit la maîtrise d’œuvre. Son application contribuera à l'optimisation des structures des sites web et assurera une reconnaissance de l'univers digital de la « <em>Région Bretagne</em> ».</p>
+          <p>Celle-ci s'appuie sur le framework <strong>bootstrap</strong></a>, veuillez-vous référer à la <a href="http://getbootstrap.com/">documentation</a> pour toute question relative à son fonctionnement.</p>
+
+          <div class="encadre selection {{thematique.id}}">
+            <h2 class="h3">Sélectionnez la thématique :</h2>
+              <form> 
+                <label class="form-label sr-only">Sélectionnez la thématique</label>
+                <select name="" id="" class="form-control" ng-model="thematique" ng-options="color.name for color in colors"></select>
+              </form>
+          </div>
+
+          <div class="highlight">
+            <pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"http://guidestyles.bretagne.bzh/thematiques/{{thematique.id}}.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Pictothèque --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"http://guidestyles.bretagne.bzh/styles/crbicon.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- jQuery --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://guidestyles.bretagne.bzh/scripts/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://guidestyles.bretagne.bzh/scripts/vendor.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span> </code></pre>
+</div>
+
+          <section ng-repeat="section in sections | filter:search" >
+            <div class="page-header">
+              <h1 id="{{section.id}}" class="h2">{{section.name}}</h1>
+            </div>
+            <div ng-include="section.url"></div>
+          </section>
+
+
+          <footer>
+            <hr />
+            <p><span class="glyphicon glyphicon-copyright-mark"></span> Conseil régional de Bretagne - Podig</p>
+
+          </footer>
+
+        </div> <!-- .col-md-6 -->
+      
+        <div class="col-md-2 sidebar" role="complementary">
+          <div data-spy="affix" data-offset-top="0" class="navigation-wrapper">
+            <p>
+               <img src="http://charte.bretagne.fr/images/logo_rb.jpg" width='80' alt="logotype région bretagne" class="img-thumbnail" />
+            </p>
+            <p class="text-right"><span class="label label-primary">{{thematique.name}}</span></p>
+            <nav class="navigation hidden-print hidden-xs hidden-sm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="recherche" ng-model="search">
+              </div>
+              <ul class="nav nav-sidebar">
+                <li><a href="#top" target="_self">Introduction</a></li>
+                <li ng-repeat="section in sections"><a href="#{{section.id}}" target="_self">{{section.name}}</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div><!-- col-md-2 -->
+
+      </div> <!-- row -->
+    </div><!-- container -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/guidestyles.min.js -->
+
+    <!-- inject:js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/json3/lib/json3.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    
+    <!-- endinject -->
+
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/jquery.min.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.min.js -->
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/crvendor.min.js -->
+    <script src="scripts/vendor.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

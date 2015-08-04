@@ -1,0 +1,64 @@
+
+@link-color:            @brand-primary-access;
+@font-family-sans-serif:  "Trebuchet Ms", Helvetica, Arial, sans-serif;
+
+@font-size-large:         ceil((@font-size-base * 1.4)); 
+@font-size-small:         ceil((@font-size-base * 0.80));
+@font-size-h1:            floor((@font-size-base * 2.2));
+@font-size-h2:            floor((@font-size-base * 1.9));
+@font-size-h3:            floor((@font-size-base * 1.5));
+
+@font-size-h4:            floor((@font-size-base * 1.2));
+@headings-font-family:    'Bretagne', @font-family-sans-serif;
+@headings-font-weight:    bold;
+@icon-img-path: "../images/";
+@icon-path:          "../fonts/";
+@border-radius-base:        1px;
+@border-radius-large:       4px;
+@border-radius-small:       0px;
+@component-active-color:    @brand-primary-text;
+@btn-default-color:              #fff;
+@btn-default-bg:                 lighten(#000, 10%);
+@btn-default-border:             darken(@btn-default-bg, 10%);
+
+@btn-primary-color:              @brand-primary-text;
+@btn-primary-border:             darken(@btn-primary-bg, 2%);
+
+@btn-secondary-color:              #fff;
+@btn-secondary-bg:                 @brand-secondary;
+@btn-secondary-border:             darken(@btn-secondary-bg, 2%);
+@input-color-placeholder:        @gray-light;
+
+
+@grid-float-breakpoint:     @screen-md-max;
+
+@navbar-height:                    60px;
+@navbar-margin-bottom:             0;
+@navbar-default-color:             #fff;
+@navbar-default-bg:                #000;
+@navbar-default-link-color:                #ddd;
+@navbar-default-link-hover-color:          #fff;
+@navbar-default-link-active-color:         #fff;
+@navbar-default-link-active-bg:            lighten(@navbar-default-bg, 10%);
+@navbar-default-brand-color:               #fff;
+@navbar-top-bg:                         @gray-lighter;
+@navbar-top-color: #333;
+@navbar-inverse-color:                      @brand-primary-text;
+@navbar-inverse-bg:                         @brand-primary;
+@navbar-inverse-link-color:                 @brand-primary-text;
+@navbar-inverse-link-hover-color:           @navbar-inverse-link-color;
+@navbar-inverse-link-hover-bg:              darken(@navbar-inverse-bg, 5%);
+@navbar-inverse-brand-hover-color:          @navbar-inverse-link-hover-color;
+@nav-sublink-padding: 						5px 15px;
+@nav-open-link-hover-color:                 #fff;
+
+@navbar-padding-horizontal: 0;
+
+@pagination-active-color:              @brand-primary-text;
+@blockquote-font-size:        (@font-size-base * 1.1);
+
+@jumbotron-padding:              @grid-gutter-width / 2;
+@jumbotron-color:                #fff;
+@jumbotron-bg:                   rgba(0,0,0,0.6);
+@jumbotron-heading-color:        inherit;
+@jumbotron-font-size:            ceil((@font-size-base * 1.1));
