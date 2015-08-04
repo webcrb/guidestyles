@@ -1,0 +1,106 @@
+// Core variables and mixins
+
+@import "./bower_components/bootstrap/less/variables.less";
+@import "./bower_components/bootstrap/less/mixins.less";
+
+.calc-grid-width(@index, @class) {
+    width: percentage((@index / @grid-columns));
+}
+
+// Reset and dependencies
+@import "./bower_components/bootstrap/less/normalize.less";
+@import "./bower_components/bootstrap/less/grid.less";
+@import "less/documentation.less";
+body {
+	position: relative;
+}
+
+.selection[class*="add-active"] {
+	.animation-duration(1s);
+  	.animation-name(flipInX);
+}
+/* .page-header[class*="add-active"] {
+	animation-duration: 0.5s;
+  	animation-name: shake;
+} */
+.sidebar {
+	padding-top: 1em;
+/* 	.calc-grid-column(12, md, width) */
+	.navigation li a {
+		padding: 5px 15px;
+	}
+}
+.navigation-wrapper {
+	position: fixed;
+	.calc-grid-width(2, md);
+}
+
+.colorbox {
+	display: block;
+	margin-bottom: 0.5em;
+	min-height: 150px;
+	&:hover {
+	.animation-duration(0.3s);
+	.animation-name(pulse);
+	cursor: pointer;
+	}
+
+}
+
+.thumbnail {
+	&:hover {
+		text-decoration: none;
+	}
+}
+.example {
+	padding: 1em;
+	border: solid 1px #eee;
+}
+
+.list-pictos {
+	li {
+		.thumbnail {
+			background: #f9f9f9;
+			
+		}
+		span[class*="icon"] {
+				margin: 14px 0;
+				display: block;
+				font-size: 30px;
+				&:hover {
+				.animation-duration(0.3s);
+				.animation-name(pulse);
+				cursor: pointer;
+			}
+			}
+	}
+}
+
+// complément
+
+
+.btn-secondary {
+	background: @gray-light;
+	color: #fff;
+	&:hover {
+		background: darken(@gray-light,10%);
+	}
+}
+
+
+.cr-btn-secondary {
+	color: @text-color;
+	&:hover {
+		background: @gray-light;
+		border-color: @gray;
+		color: #fff;
+	}
+}
+
+.pagination > li a {
+	margin-right: 5px;
+}
+
+.pager li > a {
+	border-radius: 2px;
+}

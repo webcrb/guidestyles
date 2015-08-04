@@ -1,0 +1,53 @@
+<p>La palette des niveaux de gris disponibles est la suivante :</p>
+<p>Les textes sont en <code>#333</code></p>
+<div class="row">
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #000;"></p>
+      <p class="text-center"><code>#000</code></p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #333;"></p>
+      <p class="text-center"><code>#333</code></p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #555;"></p>
+      <p class="text-center"><code>#555</code></p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #777;"></p>
+      <p class="text-center"><code>#777</code></p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #eee;"></p>
+      <p class="text-center"><code>#eee</code></p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <p class="colorbox" style="background: #fff;"></p>
+      <p class="text-center"><code>#fff</code></p>
+    </div>
+  </div>
+</div>
+<p>La palette de couleurs de la charte se compose de  11 couleurs. 9 d'entre elles se référent aux thématiques propres à la Région (<em>Territoire, Économie, Formation, Éducation, Transport, Environnement, Culture &amp; Sport, Tourisme &amp; patrimoine, Europe</em>).</p>
+<p>Cette gamme de couleurs est utilisée pour les aplats (barre de navigation, bouton..), la typographie ou autres éléments graphiques.</p>
+<div class="row">
+  <div class="col-md-3" ng-repeat="color in colors">
+    <div class="thumbnail">
+      <a class="colorbox bg-{{color.id}}" ng-click="theme(color);"></a>
+      <p class="text-center">{{color.name}}</p>
+      <p class="text-center"><code>{{color.ref}}</code></p>
+    </div>
+  </div>
+</div>
+
+
